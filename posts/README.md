@@ -2,6 +2,8 @@
 
 The Posts Service API is designed to facilitate the creation and retrieval of posts. It defines endpoints to create a new post and to retrieve all existing posts.
 
+![Posts Service Diagram](https://cln.sh/hh8WQnrmZBXjsD2z9Hyk/download)
+
 ## Endpoints
 
 ### Create a New Post
@@ -21,12 +23,23 @@ The Posts Service API is designed to facilitate the creation and retrieval of po
 
 ## Usage
 
-To **create a post**, send a POST request to `/posts` with a JSON body containing the post's title. For example:
+To **create a post**, send a POST request to `/posts` with a JSON body containing the post's title. 
 
-```json
-{
-  "title": "Hello World"
-}
-```
+To **retrieve all posts**, send a GET request to `/posts`. This request does not require a body.
 
-![Posts Service Diagram](https://cln.sh/hh8WQnrmZBXjsD2z9Hyk/download)
+## Testing Commands
+
+```shell
+# Creating a New Post
+curl -X POST http://localhost:4000/posts \
+-H "Content-Type: application/json" \
+-d '{"title": "First Post"}'
+
+# Expected Response:
+# {"id":"1850126a","title":"First Post"}%
+
+# Retrieving All Posts
+curl -X GET http://localhost:4000/posts
+
+# Expected Response:
+# {"1850126a":{"id":"1850126a","title":"First Post"}}%
