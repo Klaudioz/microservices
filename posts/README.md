@@ -43,3 +43,10 @@ curl -X GET http://localhost:4000/posts
 
 # Expected Response:
 # {"1850126a":{"id":"1850126a","title":"First Post"}}%
+```
+
+## Responses
+
+The POST request to /posts will return the created post object along with a status code indicating success (typically 201 Created).
+The GET request to /posts will return an array of post objects and a status code of 200 OK if successful.
+Please ensure your requests are correctly formatted and include all necessary headers, especially for POST requests which require a Content-Type: application/json header.
